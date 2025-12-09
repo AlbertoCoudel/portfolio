@@ -1,106 +1,3 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alberto Coudel – Sculpture Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: #000;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom: 1px solid #000;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-      font-weight: 300;
-    }
-
-    .bio {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: left;
-      font-size: 1.05rem;
-    }
-
-    .gallery {
-      max-width: 1100px;
-      margin: 60px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      padding: 0 20px;
-    }
-
-    .piece {
-      text-align: center;
-    }
-
-    .piece img {
-      width: 100%;
-      height: auto;
-      border: 1px solid #000;
-    }
-
-    .title {
-      margin-top: 12px;
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-    }
-
-    footer {
-      margin-top: 70px;
-      padding: 30px 20px;
-      text-align: center;
-      border-top: 1px solid #000;
-      font-size: 0.95rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ALBERTO COUDEL</h1>
-  </header>
-
-  <section class="bio">
-    <p><strong>I am a self-taught sculptor, and my creative process always begins with the raw material.</strong> Born in Coimbra, Portugal, and having spent my formative years in Angola, I now live and work in the Algarve—where I find constant inspiration for my art.</p>
-
-    <p>I feel deeply privileged to live and create along this beautiful coastline. Each sculpture originates from a carefully selected stone or rock that I believe already contains the figure within it. My role is simply to reveal it. Some of the stones I use come from the Alentejo, but most are found along the beaches of the Algarve.</p>
-
-    <p>At times, a specific rock will determine the subject of the sculpture, guiding me as I work with nature to bring out the form and expression hidden inside. My process is instinctive and intuitive, and my love for the human form is present throughout all my works.</p>
-  </section>
-
-  <section class="gallery">
-    <div class="piece">
-      <img src="images/IMG-20251128-WA0011.jpg" alt="Kneeling Naked Sculpture" />
-      <div class="title">Kneeling Naked</div>
-    </div>
-
-    <div class="piece">
-      <img src="images/IMG-20251128-WA0021.jpg" alt="Naked Musicians Sculpture" />
-      <div class="title">Naked Musicians</div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Alberto Coudel · Phone: 911 530 277</p>
-  </footer>
-</body>
-</html>-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -234,11 +131,53 @@
 
   <div class="page">
 
-    <!-- Example full-width image block -->
+    <!-- Full-width immersive images -->
+    <div class="full-image-block">
+      <img src="images/IMG-20251128-WA0024.jpg" alt="Artwork" />
+      <h2>Stone Dialogue</h2>
+    </div>
+    <div class="full-image-block">
+      <img src="images/IMG-20251128-WA0025.jpg" alt="Artwork" />
+      <h2>Silent Movement</h2>
+    </div>
+    <div class="full-image-block">
+      <img src="images/IMG-20251128-WA0004.jpg" alt="Artwork" />
+      <h2>Contours of Time</h2>
+    </div>
+    <div class="full-image-block">
+      <img src="images/IMG-20251128-WA0007.jpg" alt="Artwork" />
+      <h2>Shadows of Memory</h2>
+    </div>
+    <div class="full-image-block">
+      <img src="images/IMG-20251128-WA0015.jpg" alt="Artwork" />
+      <h2>Emerging Form</h2>
+    </div>
+    <div class="full-image-block">
+      <img src="images/IMG-20251128-WA0019.jpg" alt="Artwork" />
+      <h2>Hidden Harmony</h2>
+    </div>
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0021.jpg" alt="Artwork" />
-      <h2>Título Elegante da Imagem</h2>
+      <h2>Naked Musicians</h2>
     </div>
+
+    <!-- Three per row tall images -->
+    <div class="grid">
+      <div class="grid-item"><img src="images/IMG-20251128-WA0003.jpg" /></div>
+      <div class="grid-item"><img src="images/IMG-20251128-WA0010.jpg" /></div>
+      <div class="grid-item"><img src="images/IMG-20251128-WA0011.jpg" /></div>
+      <div class="grid-item"><img src="images/IMG-20251128-WA0012.jpg" /></div>
+      <div class="grid-item"><img src="images/IMG-20251128-WA0022.jpg" /></div>
+      <div class="grid-item"><img src="images/IMG-20251128-WA0023.jpg" /></div>
+    </div>
+
+    <!-- Two per row square images -->
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+      <div class="grid-item"><img src="images/IMG-20251128-WA0005.jpg" /><h2 style="text-align:center; font-weight:300;">Stone Balance</h2></div>
+      <div class="grid-item"><img src="images/IMG-20251128-WA0014.jpg" /><h2 style="text-align:center; font-weight:300;">Roots of Silence</h2></div>
+    </div>
+
+  </div>
 
     <!-- Example grid of 3-per-row images -->
     <div class="grid">
@@ -257,4 +196,3 @@
   </script>
 </body>
 </html>
-
