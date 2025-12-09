@@ -77,13 +77,13 @@
     /* Spacing top to avoid header overlap */
     .page {
       margin-top: 100px;
-      padding: 20px;
+      padding: 0 0; /* removed side padding */
     }
 
     /* Full-width image block */
     .full-image-block {
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 80px; /* increased vertical spacing */
     }
 
     .full-image-block img {
@@ -102,9 +102,9 @@
     /* Grid images */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* prevents too many per row */
+      gap: 40px; /* more spacing */
+      margin-bottom: 80px;
     }
 
     .grid-item img {
