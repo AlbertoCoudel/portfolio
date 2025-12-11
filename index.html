@@ -102,8 +102,8 @@
     /* Grid images */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* prevents too many per row */
-      gap: 40px; /* more spacing */
+      grid-template-columns: repeat(3, 1fr); /* prevents too many per row */
+      gap: 80px; /* more spacing */
       margin-bottom: 80px;
     }
 
@@ -117,7 +117,7 @@
 <body>
   <header>
     <div class="logo" style="flex:1; display:flex; justify-content:center;">
-      <img src="images/signature.png" alt="Signature" style="height:40px; object-fit:contain;" />
+      <img src="images/signature.png" alt="Signature" style="height:200px; object-fit:contain;" />
     </div>
     <div class="menu-icon" onclick="toggleMenu()">
       <div></div>
