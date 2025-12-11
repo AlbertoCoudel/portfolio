@@ -34,7 +34,32 @@
 </head>
 <body>
 
-  <img src="images/foto_contacto.jpg" alt="Profile Photo" class="profile" />
+  <header style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); backdrop-filter: blur(8px); z-index: 1000;">
+    <div style="flex:1; display:flex; justify-content:center;">
+      <img src="images/signature.png" alt="Signature" style="height:120px; object-fit:contain;" />
+    </div>
+
+    <div id="menuIcon" style="width:26px; cursor:pointer; display:flex; flex-direction:column; gap:5px;">
+      <div style="height:3px; background:#222; border-radius:3px;"></div>
+      <div style="height:3px; background:#222; border-radius:3px;"></div>
+      <div style="height:3px; background:#222; border-radius:3px;"></div>
+    </div>
+
+    <nav id="dropdownMenu" style="position:absolute; top:60px; right:30px; background:#fff; padding:15px 20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); display:none;">
+      <a href="index.html" style="display:block; padding:8px 0; text-decoration:none; color:#333; font-size:1rem;">Portfolio</a>
+      <a href="contact.html" style="display:block; padding:8px 0; text-decoration:none; color:#333; font-size:1rem;">Contact</a>
+    </nav>
+  </header>
+
+  <script>
+    document.getElementById('menuIcon').onclick = function() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+  </script>
+
+
+  <img src="images/contact_photo.jpg" alt="Profile Photo" class="profile" />
 
   <div class="contact-item">
     <span class="icon">📧</span> escultor.al.coudel@gmail.com
