@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alberto Coudel</title>
+
   <style>
     body {
       margin: 0;
@@ -12,7 +13,7 @@
       color: #222;
     }
 
-    /* Top Navigation Bar */
+    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -29,36 +30,45 @@
     }
 
     .logo {
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: 1px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
     }
 
-    /* Hamburger */
+    .logo img {
+      height: 120px;
+      object-fit: contain;
+      user-select: none;
+    }
+
+    /* Hamburger Icon */
     .menu-icon {
       width: 26px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 5px;
+      position: absolute;
+      right: 30px;
     }
 
     .menu-icon div {
       height: 3px;
-      background: #222;
+      background: #000;
       border-radius: 3px;
     }
 
-    /* Dropdown */
+    /* Dropdown Menu */
     nav {
       position: absolute;
-      top: 60px;
+      top: 70px;
       right: 30px;
       background: #fff;
       padding: 15px 20px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: none;
+      z-index: 999;
     }
 
     nav a {
@@ -74,16 +84,16 @@
       font-weight: 600;
     }
 
-    /* Spacing top to avoid header overlap */
+    /* MAIN PAGE CONTENT */
     .page {
-      margin-top: 100px;
-      padding: 0 0; /* removed side padding */
+      margin-top: 150px; /* avoid header overlap */
+      padding: 0;
     }
 
-    /* Full-width image block */
+    /* Full-width blocks */
     .full-image-block {
       width: 100%;
-      margin-bottom: 80px; /* increased vertical spacing */
+      margin-bottom: 80px;
     }
 
     .full-image-block img {
@@ -102,9 +112,10 @@
     /* Grid images */
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* prevents too many per row */
-      gap: 80px; /* more spacing */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px;
       margin-bottom: 80px;
+      padding: 0 40px;
     }
 
     .grid-item img {
@@ -114,11 +125,15 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="logo" style="flex:1; display:flex; justify-content:center;">
-      <img src="images/signature.png" alt="Signature" style="height:200px; object-fit:contain;" />
+    <div class="logo">
+      <img src="images/signature.png" alt="Signature" />
     </div>
+
     <div class="menu-icon" onclick="toggleMenu()">
       <div></div>
       <div></div>
@@ -126,11 +141,12 @@
     </div>
 
     <nav id="dropdownMenu">
-      <a href="#">Portfolio</a>
-      <a href="#">Contact</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/portfolio/contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- PAGE CONTENT -->
   <div class="page">
 
     <!-- Full-width immersive images -->
@@ -138,32 +154,38 @@
       <img src="images/IMG-20251128-WA0024.jpg" alt="Artwork" />
       <h2>Stone Dialogue</h2>
     </div>
+
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0025.jpg" alt="Artwork" />
       <h2>Silent Movement</h2>
     </div>
+
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0004.jpg" alt="Artwork" />
       <h2>Contours of Time</h2>
     </div>
+
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0007.jpg" alt="Artwork" />
       <h2>Shadows of Memory</h2>
     </div>
+
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0015.jpg" alt="Artwork" />
       <h2>Emerging Form</h2>
     </div>
+
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0019.jpg" alt="Artwork" />
       <h2>Hidden Harmony</h2>
     </div>
+
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0021.jpg" alt="Artwork" />
       <h2>Naked Musicians</h2>
     </div>
 
-    <!-- Three per row tall images -->
+    <!-- Grid of 3 images per row -->
     <div class="grid">
       <div class="grid-item"><img src="images/IMG-20251128-WA0003.jpg" /></div>
       <div class="grid-item"><img src="images/IMG-20251128-WA0010.jpg" /></div>
@@ -173,28 +195,36 @@
       <div class="grid-item"><img src="images/IMG-20251128-WA0023.jpg" /></div>
     </div>
 
-    <!-- Two per row square images -->
+    <!-- Two per row with titles -->
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-      <div class="grid-item"><img src="images/IMG-20251128-WA0005.jpg" /><h2 style="text-align:center; font-weight:300;">Stone Balance</h2></div>
-      <div class="grid-item"><img src="images/IMG-20251128-WA0014.jpg" /><h2 style="text-align:center; font-weight:300;">Roots of Silence</h2></div>
+      <div class="grid-item">
+        <img src="images/IMG-20251128-WA0005.jpg" />
+        <h2 style="text-align:center; font-weight:300;">Stone Balance</h2>
+      </div>
+
+      <div class="grid-item">
+        <img src="images/IMG-20251128-WA0014.jpg" />
+        <h2 style="text-align:center; font-weight:300;">Roots of Silence</h2>
+      </div>
     </div>
 
   </div>
 
-    <!-- Example grid of 3-per-row images -->
-    <div class="grid">
-      <div class="grid-item"><img src="images/IMG-20251128-WA0021.jpg" alt="Image" /></div>
-      <div class="grid-item"><img src="images/IMG-20251128-WA0011.jpg" alt="Image" /></div>
-      <div class="grid-item"><img src="images/IMG-20251128-WA0021.jpg" alt="Image" /></div>
-    </div>
-
-  </div>
-
+  <!-- JS FOR MENU -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('dropdownMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
     }
+
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById('dropdownMenu');
+      const icon = document.querySelector('.menu-icon');
+      if (!menu.contains(e.target) && !icon.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
   </script>
+
 </body>
 </html>
