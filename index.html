@@ -6,23 +6,13 @@
   <title>Alberto Coudel</title>
 
   <style>
-
-    /* --- FIX: Remove ALL horizontal scroll --- */
+    /* Prevent any side-scrolling */
     html, body {
+      margin: 0;
+      padding: 0;
       overflow-x: hidden;
       width: 100%;
-      max-width: 100%;
-    }
-
-    /* --- FIX: Prevent images from overflowing by 1px on some phones --- */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    body {
-      margin: 0;
+      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
       background: #f8f8f8;
       color: #222;
@@ -47,17 +37,17 @@
       height: 110px;
       object-fit: contain;
       display: block;
-      margin: 0 auto; /* extra safety for centering */
     }
 
     .page {
       margin-top: 140px;
-      padding: 0;
     }
 
+    /* Wide image blocks — always 1 per row */
     .full-image-block {
       width: 100%;
       margin-bottom: 60px;
+      overflow: hidden;
     }
 
     .full-image-block img {
@@ -73,19 +63,29 @@
       letter-spacing: 1px;
     }
 
-    .grid {
+    /* THIN: always 3 per row */
+    .grid-thin {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-bottom: 60px;
-      padding: 0 20px;
-      box-sizing: border-box; /* FIX: prevents overflow */
+      gap: 20px;
+      width: 100%;
+      margin: 0;
+    }
+
+    /* SQUARE: always 2 per row */
+    .grid-square {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+      margin: 60px 0;
     }
 
     .grid-item img {
       width: 100%;
-      border-radius: 6px;
+      height: auto;
       display: block;
+      border-radius: 6px;
     }
 
     footer {
@@ -100,18 +100,6 @@
       font-size: 1.3rem;
       margin-right: 6px;
     }
-
-    @media (max-width: 768px) {
-      .logo img {
-        height: 90px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 10px; /* reduce padding to avoid overflow risk */
-      }
-    }
   </style>
 </head>
 
@@ -125,42 +113,44 @@
 
   <div class="page">
 
+    <!-- WIDE IMAGES -->
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0024.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0024.jpg" />
       <h2>Stone Dialogue</h2>
     </div>
 
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0025.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0025.jpg" />
       <h2>Silent Movement</h2>
     </div>
 
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0004.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0004.jpg" />
       <h2>Contours of Time</h2>
     </div>
 
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0007.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0007.jpg" />
       <h2>Shadows of Memory</h2>
     </div>
 
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0015.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0015.jpg" />
       <h2>Emerging Form</h2>
     </div>
 
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0019.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0019.jpg" />
       <h2>Hidden Harmony</h2>
     </div>
 
     <div class="full-image-block">
-      <img src="images/IMG-20251128-WA0021.jpg" alt="Artwork" />
+      <img src="images/IMG-20251128-WA0021.jpg" />
       <h2>Naked Musicians</h2>
     </div>
 
-    <div class="grid">
+    <!-- THIN IMAGES (3 per row always) -->
+    <div class="grid-thin">
       <div class="grid-item"><img src="images/IMG-20251128-WA0003.jpg" /></div>
       <div class="grid-item"><img src="images/IMG-20251128-WA0010.jpg" /></div>
       <div class="grid-item"><img src="images/IMG-20251128-WA0011.jpg" /></div>
@@ -169,15 +159,13 @@
       <div class="grid-item"><img src="images/IMG-20251128-WA0023.jpg" /></div>
     </div>
 
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); box-sizing:border-box;">
+    <!-- SQUARE IMAGES (2 per row always) -->
+    <div class="grid-square">
       <div class="grid-item">
         <img src="images/IMG-20251128-WA0005.jpg" />
-        <h2 style="text-align:center; font-weight:300;">Stone Balance</h2>
       </div>
-
       <div class="grid-item">
         <img src="images/IMG-20251128-WA0014.jpg" />
-        <h2 style="text-align:center; font-weight:300;">Roots of Silence</h2>
       </div>
     </div>
 
