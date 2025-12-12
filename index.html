@@ -13,87 +13,34 @@
       color: #222;
     }
 
-    /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255,255,255,0.9);
-      padding: 15px 30px;
+      background: rgba(255,255,255,0.95);
+      padding: 10px 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       backdrop-filter: blur(8px);
       z-index: 1000;
     }
 
-    .logo {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
     .logo img {
-      height: 120px;
+      height: 110px;
       object-fit: contain;
-      user-select: none;
     }
 
-    /* Hamburger Icon */
-    .menu-icon {
-      width: 26px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      position: absolute;
-      right: 30px;
-    }
-
-    .menu-icon div {
-      height: 3px;
-      background: #000;
-      border-radius: 3px;
-    }
-
-    /* Dropdown Menu */
-    nav {
-      position: absolute;
-      top: 70px;
-      right: 30px;
-      background: #fff;
-      padding: 15px 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: none;
-      z-index: 999;
-    }
-
-    nav a {
-      display: block;
-      padding: 8px 0;
-      text-decoration: none;
-      color: #333;
-      font-size: 1rem;
-    }
-
-    nav a:hover {
-      color: #000;
-      font-weight: 600;
-    }
-
-    /* MAIN PAGE CONTENT */
     .page {
-      margin-top: 150px; /* avoid header overlap */
+      margin-top: 140px;
       padding: 0;
     }
 
-    /* Full-width blocks */
     .full-image-block {
       width: 100%;
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
 
     .full-image-block img {
@@ -109,13 +56,12 @@
       letter-spacing: 1px;
     }
 
-    /* Grid images */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 80px;
-      margin-bottom: 80px;
-      padding: 0 40px;
+      gap: 40px;
+      margin-bottom: 60px;
+      padding: 0 20px;
     }
 
     .grid-item img {
@@ -123,33 +69,43 @@
       border-radius: 6px;
       display: block;
     }
+
+    footer {
+      margin-top: 80px;
+      padding: 40px 0;
+      text-align: center;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    footer .icon {
+      font-size: 1.3rem;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .logo img {
+        height: 90px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="images/signature.png" alt="Signature" />
     </div>
-
-    <div class="menu-icon" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <nav id="dropdownMenu">
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/portfolio/contact.html">Contact</a>
-    </nav>
   </header>
 
-  <!-- PAGE CONTENT -->
   <div class="page">
 
-    <!-- Full-width immersive images -->
     <div class="full-image-block">
       <img src="images/IMG-20251128-WA0024.jpg" alt="Artwork" />
       <h2>Stone Dialogue</h2>
@@ -185,7 +141,6 @@
       <h2>Naked Musicians</h2>
     </div>
 
-    <!-- Grid of 3 images per row -->
     <div class="grid">
       <div class="grid-item"><img src="images/IMG-20251128-WA0003.jpg" /></div>
       <div class="grid-item"><img src="images/IMG-20251128-WA0010.jpg" /></div>
@@ -195,7 +150,6 @@
       <div class="grid-item"><img src="images/IMG-20251128-WA0023.jpg" /></div>
     </div>
 
-    <!-- Two per row with titles -->
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
       <div class="grid-item">
         <img src="images/IMG-20251128-WA0005.jpg" />
@@ -210,21 +164,10 @@
 
   </div>
 
-  <!-- JS FOR MENU -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-    }
-
-    document.addEventListener("click", function(e) {
-      const menu = document.getElementById('dropdownMenu');
-      const icon = document.querySelector('.menu-icon');
-      if (!menu.contains(e.target) && !icon.contains(e.target)) {
-        menu.style.display = 'none';
-      }
-    });
-  </script>
+  <footer>
+    <div><span class="icon">🖂</span>escultor.al.coudel@gmail.com</div>
+    <div><span class="icon">☎</span>+351 911 530 277</div>
+  </footer>
 
 </body>
 </html>
