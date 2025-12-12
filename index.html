@@ -6,6 +6,21 @@
   <title>Alberto Coudel</title>
 
   <style>
+
+    /* --- FIX: Remove ALL horizontal scroll --- */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* --- FIX: Prevent images from overflowing by 1px on some phones --- */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -32,6 +47,7 @@
       height: 110px;
       object-fit: contain;
       display: block;
+      margin: 0 auto; /* extra safety for centering */
     }
 
     .page {
@@ -63,6 +79,7 @@
       gap: 40px;
       margin-bottom: 60px;
       padding: 0 20px;
+      box-sizing: border-box; /* FIX: prevents overflow */
     }
 
     .grid-item img {
@@ -92,6 +109,7 @@
       .grid {
         grid-template-columns: 1fr;
         gap: 30px;
+        padding: 0 10px; /* reduce padding to avoid overflow risk */
       }
     }
   </style>
@@ -151,7 +169,7 @@
       <div class="grid-item"><img src="images/IMG-20251128-WA0023.jpg" /></div>
     </div>
 
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); box-sizing:border-box;">
       <div class="grid-item">
         <img src="images/IMG-20251128-WA0005.jpg" />
         <h2 style="text-align:center; font-weight:300;">Stone Balance</h2>
@@ -172,5 +190,3 @@
 
 </body>
 </html>
-
-
